@@ -1032,6 +1032,67 @@ nav {
   z-index: 1;
 }
 
+/* ============ CASES ============ */
+.cases {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+  position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 1400px;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.case-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+}
+
+.case-card:hover {
+  border-color: rgba(139,61,255,0.4);
+  transform: translateY(-6px);
+}
+
+.case-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
+
+.case-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.case-label {
+  padding: 14px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-dim);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1000px) {
+  .cases-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .cases-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .case-label { padding: 10px 12px; font-size: 11px; }
+}
+
 /* ============ MANIFESTO ============ */
 .manifesto {
   padding: 140px 0;
@@ -1269,6 +1330,7 @@ footer {
     </div>
     <ul class="nav-links">
       <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#cases">Cases</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -1407,6 +1469,78 @@ footer {
   </div>
 </section>
 
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Prova real</div>
+      <h2 class="section-title">Não é <span class="italic">conceito</span>.<br>É o que já entregamos.</h2>
+      <p class="section-desc">10 vídeos reais, gerados 100% por IA, para negócios de nichos diferentes — veja a qualidade antes de qualquer conversa.</p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/caa38ff2-bd63-4865-bc2c-c3a2dc1fda87?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Net Agora</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/6658a4c2-0430-4b99-8682-402180cb787a?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Meu Tosador</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/03d36f27-65c8-477b-91eb-c78052c9c408?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">JCS Empreendimentos</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/b4c8b03f-d87f-4c41-bc08-69000b954943?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Joerdan Mudanças</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/0ddb6485-53bd-4a01-89ea-a0d9c7e960b3?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Auto Escola Centro</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/8f9fa447-f2cf-463e-904e-a45796005811?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">V4 Company</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/c3d2fd28-c7c4-453a-a24a-915163eac028?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ótica Lima</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/f9c724e7-1143-4596-9d85-efc0513cedd9?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">PontoNet</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/ebd4f3a1-edec-4bd6-86f5-46e710991c2e?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Anúncio Gel</div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/741588/cd5083dc-9470-4f35-901b-dabf3df0d12b?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">GuiaChat</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="manifesto" id="manifesto">
   <div class="container">
@@ -1464,17 +1598,13 @@ footer {
         <h4>Empresa</h4>
         <ul>
           <li><a href="#">Manifesto</a></li>
-          <li><a href="#">Cases</a></li>
-          <li><a href="#">Carreiras</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#cases">Cases</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="mailto:oi@bytegrowth.ai">oi@bytegrowth.ai</a></li>
           <li><a href="https://wa.me/message/AIC47UMHPFX7E1" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-          <li><a href="#">LinkedIn</a></li>
           <li><a href="#">Instagram</a></li>
         </ul>
       </div>
