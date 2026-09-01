@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Byte Growth — Marketing IA-Native</title>
-<link rel="icon" type="image/png" href="imagens/logo.png">
+<link rel="icon" type="image/png" href="imagens/logo-sem-fundo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #05060f;
-  --bg-2: #0a0b1e;
+  --bg: #000000;
+  --bg-2: #000000;
   --ink: #ffffff;
   --ink-dim: rgba(255,255,255,0.62);
   --ink-faint: rgba(255,255,255,0.38);
-  --blue: #2b5cff;
-  --blue-bright: #4d7dff;
+  --blue: #5b2cb8;
+  --blue-bright: #a855f7;
   --purple: #8b3dff;
-  --purple-bright: #b266ff;
+  --purple-bright: #c084fc;
   --line: rgba(255,255,255,0.08);
   --line-strong: rgba(255,255,255,0.16);
 }
@@ -26,6 +26,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
+:focus-visible {
+  outline: 2px solid var(--purple-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 body {
   background: var(--bg);
@@ -57,9 +63,6 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(139,61,255,0.18), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 30%, rgba(43,92,255,0.15), transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -82,7 +85,7 @@ nav {
   z-index: 100;
   padding: 20px 0;
   backdrop-filter: blur(20px);
-  background: rgba(5,6,15,0.6);
+  background: rgba(0,0,0,0.6);
   border-bottom: 1px solid var(--line);
   transform: translateY(-100%);
   animation: navSlideIn 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -117,8 +120,8 @@ nav {
 }
 
 .logo-mark {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   position: relative;
   display: flex;
   align-items: center;
@@ -126,6 +129,12 @@ nav {
 }
 
 .logo-mark svg { width: 100%; height: 100%; }
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .nav-links {
   display: flex;
@@ -342,18 +351,16 @@ nav {
   align-items: center;
   gap: 10px;
   padding: 16px 28px;
-  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+  background: transparent;
   color: var(--ink);
   border-radius: 100px;
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.3);
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s;
-  background-size: 200% 200%;
-  animation: gradientShift 4s ease infinite;
+  transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 .btn-primary::before {
@@ -364,12 +371,13 @@ nav {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: radial-gradient(circle, var(--purple) 0%, var(--blue) 100%);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }
 
 .btn-primary:hover {
+  border-color: transparent;
   box-shadow: 0 15px 40px rgba(139, 61, 255, 0.4);
 }
 
@@ -454,10 +462,7 @@ nav {
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, #fff 0%, rgba(178,102,255,0.7) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--ink);
 }
 
 .metric-label {
@@ -520,10 +525,11 @@ nav {
 .marquee-item:hover { color: var(--ink); }
 
 .marquee-item::after {
-  content: '✦';
+  content: '▶';
   color: var(--purple-bright);
   font-style: normal;
-  animation: spin 6s linear infinite;
+  font-size: 14px;
+  text-shadow: 0 0 12px var(--purple-bright);
   display: inline-block;
 }
 
@@ -538,7 +544,7 @@ nav {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--purple-bright);
+  color: var(--ink-faint);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -850,13 +856,13 @@ nav {
   height: 44px;
   border: 1px solid var(--line-strong);
   border-radius: 12px;
-  background: rgba(43,92,255,0.1);
+  background: rgba(255,255,255,0.03);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
-  color: var(--blue-bright);
+  color: var(--ink-dim);
   position: relative;
   z-index: 2;
   animation: nodeBlink 4s ease-in-out infinite;
@@ -1008,7 +1014,7 @@ nav {
   font-size: 80px;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px var(--purple-bright);
+  -webkit-text-stroke: 1px rgba(255,255,255,0.35);
   margin-bottom: 32px;
   font-style: italic;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1162,7 +1168,7 @@ nav {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(43, 92, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(91, 44, 184, 0.16) 0%, transparent 70%);
   bottom: -100px;
   left: -100px;
   pointer-events: none;
@@ -1324,13 +1330,14 @@ footer {
   <div class="container nav-inner">
     <div class="logo">
       <div class="logo-mark">
-        <img src="imagens/logo.png" alt="Byte Growth" style="width:100%;height:100%;object-fit:contain;">
+        <img src="imagens/logo-sem-fundo.png" alt="Byte Growth">
       </div>
       <span>BYTE GROWTH</span>
     </div>
     <ul class="nav-links">
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#cases">Cases</a></li>
+      <li><a href="#processo">Processo</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -1542,6 +1549,38 @@ footer {
   </div>
 </section>
 
+<section class="process" id="processo">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Como funciona</div>
+      <h2 class="section-title">Quatro etapas,<br><span class="italic">uma entrega</span>.</h2>
+      <p class="section-desc">Cada vídeo passa pela mesma esteira — nessa ordem, sempre. É o que garante consistência mesmo em alto volume.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h3 class="process-title">Roteiro</h3>
+        <p class="process-desc">A IA escreve a partir do seu briefing, ajustado ao tom da sua marca e ao objetivo do vídeo.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num">02</div>
+        <h3 class="process-title">Voz</h3>
+        <p class="process-desc">Narração sintética natural, no idioma, sotaque e ritmo que a peça pede.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num">03</div>
+        <h3 class="process-title">Avatar</h3>
+        <p class="process-desc">Um avatar com lip-sync interpreta o roteiro — sem câmera, sem gravação real.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num">04</div>
+        <h3 class="process-title">Edição</h3>
+        <p class="process-desc">Corte, ritmo e exportação prontos pra publicar, em qualquer formato de plataforma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="manifesto" id="manifesto">
   <div class="container">
     <div class="section-header">
@@ -1580,7 +1619,7 @@ footer {
       <div class="footer-brand">
         <div class="logo">
           <div class="logo-mark">
-            <img src="imagens/logo.png" alt="Byte Growth" style="width:100%;height:100%;object-fit:contain;">
+            <img src="imagens/logo-sem-fundo.png" alt="Byte Growth">
           </div>
           <span>BYTE GROWTH</span>
         </div>
@@ -1605,7 +1644,7 @@ footer {
         <h4>Contato</h4>
         <ul>
           <li><a href="https://wa.me/message/AIC47UMHPFX7E1" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-          <li><a href="#">Instagram</a></li>
+          <li><a href="https://www.instagram.com/bytegrowthh" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </div>
     </div>
