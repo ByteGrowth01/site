@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Byte Growth — Cases de Provedores</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="imagens/logo-sem-fundo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #000000;
+  --ink: #ffffff;
+  --ink-dim: rgba(255,255,255,0.62);
+  --ink-faint: rgba(255,255,255,0.38);
+  --blue: #5b2cb8;
+  --blue-bright: #a855f7;
+  --purple: #8b3dff;
+  --purple-bright: #c084fc;
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.16);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+header {
+  padding: 40px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.page-head {
+  padding: 60px 0 20px;
+}
+
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--purple-bright);
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.page-title .italic {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--purple-bright);
+}
+
+.page-desc {
+  font-size: 17px;
+  color: var(--ink-dim);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.cases {
+  padding: 40px 0 120px;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.case-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
+  transition: transform 0.4s ease, border-color 0.3s ease;
+}
+
+.case-card:hover {
+  border-color: rgba(139,61,255,0.4);
+  transform: translateY(-6px);
+}
+
+.case-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
+
+.case-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.case-label {
+  padding: 14px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-dim);
+  border-top: 1px solid var(--line);
+}
+
+footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  display: flex;
+  gap: 24px;
+}
+
+footer a {
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 1000px) {
+  .cases-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .page-head { padding-top: 88px; }
+  .cases-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .case-label { padding: 10px 12px; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-mark">
+        <img src="imagens/logo-sem-fundo.png" alt="Byte Growth">
+      </div>
+      <span>BYTE GROWTH</span>
+    </div>
+  </div>
+</header>
+
+<div class="container page-head">
+  <h1 class="page-title">Cases de <span class="italic">provedores</span>.</h1>
+  <p class="page-desc">Uma seleção de vídeos que já criamos pra provedores de internet e empresas de serviços do mesmo nicho — pra você ver de perto a qualidade antes de qualquer conversa.</p>
+</div>
+
+<section class="cases">
+  <div class="container">
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/4fa8ce74-cfcc-4c54-aa97-562a868cfa37?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Link</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/3e6ce88e-fa69-45a3-950f-faa616f9522a?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Vlan Fibra</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/7b3d2212-8168-47f0-b9a1-17ff41e3274d?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Vlan Fibra</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/a923f20f-0fe6-4164-bd4c-5c124bd95022?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Net</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/dd831e48-effa-420c-a197-ddc086fdfa79?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Net</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/e90471da-d471-4a0a-8fae-5a8858fccc42?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Net</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/478cea19-bb6d-4589-933b-4ace3060900d?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Net</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/015648b7-c6d4-44e2-8e68-f7d752958cd5?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Net</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/6bdbb13d-9d1a-485a-ab11-4893fc94645b?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Ponto Net</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/6723d406-00fb-428d-906e-962d5d970845?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Iconect</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/6494382e-4048-4de0-aa08-7062c29011ab?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Lup Internet</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/e4e85188-1d70-498e-b8c5-ab02dbcc909d?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">88NET</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/f03ee80e-be8a-44e2-bb22-fc900ebbdfec?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">88NET</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/97dd9e6c-2db8-4b8e-8f21-95f485e0e0fb?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">88NET</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/756d958c-ae6a-4289-9ded-27fa8a6f0165?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">V4 Company</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/a7c0ff49-d63b-47c7-9265-d9eb2c318b28?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">GuiaChat</div>
+      </div>
+      <div class="case-card">
+        <div class="case-video">
+          <iframe src="https://iframe.mediadelivery.net/embed/745010/b619d4c0-4b5b-40c9-8c26-a881c52b45ae?autoplay=false&loop=false&muted=false&preload=false" loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
+        </div>
+        <div class="case-label">Nio Hub</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="https://www.instagram.com/bytegrowthh" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://wa.me/message/AIC47UMHPFX7E1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </div>
+</footer>
+
+</body>
+</html>
